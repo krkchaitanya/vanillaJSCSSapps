@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -28,7 +29,8 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: "./iconHoverEffect/index.html",
           filename: "iconhover.html"
-        })
+        }),
+        new OptimizeCSSAssetsPlugin({})
     ],
       
     
