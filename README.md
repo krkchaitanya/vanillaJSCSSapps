@@ -1,1 +1,1 @@
-# JSCSSeffects
+# vanillaJSCSSapps
