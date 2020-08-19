@@ -23,10 +23,10 @@ body {
     margin: 1rem 0;
 }
 
+.bkltapp__header { display: flex;}
 .bkltapp__header h3{
     display: flex;
     font-size: 2.5rem;
-    width: 40%;
     margin: auto;
 }
 
@@ -70,22 +70,86 @@ ul li {
     border-radius: 5px;
     background-color: rgb(140, 160, 167);
 }
+.bkltapp__form input:hover {
+    background-color: rgb(173, 170, 170);
+    transition: 0.2s ease-in;
+}
 .bkltapp__form button:hover {
     background-color: rgb(151, 182, 194);
     transition: 0.3s ease-in;
     box-shadow: rgb(94, 116, 128) 0 0 0.2rem;
 }
 
-.bkltapp__list--header {
-    border: 0.2px solid rgb(121, 118, 118);
-    padding: 1rem;
-    border-radius: 5px;
+
+/* book list table data */
+.bkltapp__list {
+    margin-top: 1rem;
 }
-.bkltapp__list--header ul {
+.bkltapp__list thead {
+    font-family: sans-serif;
+    font-weight: bolder;
     font-size: 1.2rem;
 }
-.bkltapp__list--header ul li {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
+thead th {
+    border-bottom: 2px solid rgb(96, 121, 96);
+}
+.bkltapp__list tbody {
+    text-align: center;
+} 
+tbody td {
+    padding: 1rem;
+    border-bottom: 0.1px solid rgb(21, 26, 21);
+}
+.bkltapp__list tbody .btn {
+    text-decoration: none;
+    color: rgb(216, 105, 105);
+    font-weight: bolder;
+    font-size: 1.1rem;
+    border: 2px solid rgb(126, 99, 99);
+    border-radius: 5px;
+    padding: 1px;
+}
+.bkltapp__list tbody .btn:hover {
+    background-color: rgb(230, 195, 195);
+    transition: 0.5s ease-in;
+}
+
+
+
+/* media queries */
+@media (min-width:1200px) {
+    .booklist {
+        width: 30%;
+    }
+    .bkltapp__form form {
+        width: 70%;
+    }
+}
+@media (min-width:960px) and (max-width: 1200px) {
+    .booklist {
+        width: 40%;
+    }
+    .bkltapp__form form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 960px) {
+    .booklist {
+        width: 50%;
+    }
+    .bkltapp__header h3{
+        font-size: 1.8rem;
+    }
+    .bkltapp__form form {
+        width: 70%;
+    }
+}
+@media (max-width: 720px) {
+    .booklist {
+        width: 70%;
+    }
+    .bkltapp__form form {
+        width: 70%;
+    }
 }

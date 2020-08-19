@@ -24,7 +24,7 @@
             
             <!-- Form -->
             <div class="bkltapp__form">
-                <form>
+                <form id="book-form">
                     <div>
                         <label for="title">Title</label><br>
                         <input type="text" id="title" name="title"><br>
@@ -38,33 +38,27 @@
                         <input type="number" id="isbn" name="author"><br><br>
                     </div>
                     <div>
-                        <button type="submit">Add Book</button>
+                        <button type="submit" id="addNewBookBtn">Add Book</button>
                     </div>
                 </form>
             </div>
 
-            <!-- Book List  -->
-            <div class="bkltapp__list">
-                <!-- header -->
-                <div class="bkltapp__list--header">
-                    <ul>
-                        <li>
-                            <span>Title</span>
-                            <span>Author</span>
-                            <span>Isbn</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- list of books -->
-                <div class="bkltapp__list--books">
-                    <ul>
-                        <li>
-    
-                        </li>
-                    </ul>
-                </div>
 
-            </div>
+            <!-- book list table -->
+            <table class="bkltapp__list">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>ISBN#</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+
+                </tbody>
+            </table>
+
         
         </div>
 
