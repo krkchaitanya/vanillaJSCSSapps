@@ -11,6 +11,7 @@ body {
     justify-content: center;
     margin-top: 6rem;
     background: linear-gradient(45deg, rgb(2,2,2), rgb(151, 147, 147));
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .booklist {
@@ -99,6 +100,12 @@ thead th {
 tbody td {
     padding: 1rem;
     border-bottom: 0.1px solid rgb(21, 26, 21);
+    color: rgb(177, 177, 135);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+tbody :hover {
+    color: rgb(196, 196, 77);
+    background-color: transparent;    
 }
 .bkltapp__list tbody .btn {
     text-decoration: none;
@@ -115,6 +122,18 @@ tbody td {
 }
 
 
+.booklist_error--msg {
+    color: rgb(247, 76, 76);
+    font-family: sans-serif;
+}
+.empty_list {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: rgb(150, 182, 179);
+    font-family: sans-serif;
+}
 
 /* media queries */
 @media (min-width:1200px) {

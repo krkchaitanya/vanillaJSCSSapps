@@ -49,6 +49,10 @@ class UI {
     static removeBook(book) {
         book.classList.contains("book-delete") &&
         book.parentElement.parentElement.remove();
+        
+        const list = document.getElementById("book-list");
+        !!!list.childElementCount &&
+            (document.querySelector(".empty_list").innerText = "No items in the list");    
     }
 
 }
@@ -66,16 +70,24 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 document.querySelector("#book-form").addEventListener("submit", (e) => {
 
     e.preventDefault();
+    document.querySelector(".booklist_error--msg").innerText = "";
 
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const isbn = document.getElementById("isbn").value;
 
     const newBookObj = new Book(title, author, isbn);
-
-    UI.addBookToTheList(newBookObj);
-
-    document.querySelector("#book-form").reset();
+    const errorMsgArr = ["", undefined];
+    if(
+        errorMsgArr.includes(title) ||
+        errorMsgArr.includes(author) ||
+        errorMsgArr.includes(isbn))   
+        {
+            document.querySelector(".booklist_error--msg").innerText = "Enter valid book details";
+        } else {
+            UI.addBookToTheList(newBookObj);
+            document.querySelector("#book-form").reset();
+        }
 });
 
 // handle delete book button

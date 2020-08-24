@@ -27,20 +27,25 @@
                 <form id="book-form">
                     <div>
                         <label for="title">Title</label><br>
-                        <input type="text" id="title" name="title"><br>
+                        <input type="text" id="title" name="title"  pattern="[a-zA-Z ]+" title="Enter only text" placeholder="SomeBook.."><br>
                     </div>
                     <div>
                         <label for="author">Author</label><br>
-                        <input type="text" id="author" name="author"><br>
+                        <input type="text" id="author" name="author" pattern="[a-zA-Z ]+" title="Enter only text" placeholder="John Doe.."><br>
                     </div>
                     <div>
                         <label for="isbn">Isbn#</label><br>
-                        <input type="number" id="isbn" name="author"><br><br>
+                        <input type="number" id="isbn" name="author" placeholder="123456"><br><br>
                     </div>
                     <div>
                         <button type="submit" id="addNewBookBtn">Add Book</button>
                     </div>
                 </form>
+            </div>
+
+            <!-- capture error messages -->
+            <div class="booklist_error">
+                <p class="booklist_error--msg"></p>
             </div>
 
 
@@ -58,6 +63,7 @@
 
                 </tbody>
             </table>
+            <p class="empty_list"></p>
 
         
         </div>
