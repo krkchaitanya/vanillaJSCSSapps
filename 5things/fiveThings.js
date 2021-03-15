@@ -62,19 +62,22 @@ class Stack {
 
     push(element) {
         this.items[this.count] = element;
-        console.log(` Element Added- '${element}' at pos- ${this.count}`);
+        console.log(` Element Added- '${element}' at pos-> ${this.count}`);
         this.count += 1;
     }
 
     pop() {
-        !!this.count === 0 && undefined;
-        let pulledElement = this.items[this.count - 1];
-        console.log(` Element Retrieved - ${!!pulledElement ? pulledElement : "none"} from pos - ${this.count-1}`);
-        this.count -= 1;
+        
+        console.log(
+            ` Element retrieved- '${!!this.items.length ? this.items[this.items.length - 1] : "none"}' at pos-> ${this.items.length - 1}`
+            );
+        
+        !!this.items[this.items.length - 1] && this.items.splice(this.items.length - 1);
+        !!this.count && (this.count -= 1);
     }
 
     stackElementCount() {
-        console.log(`Total no of elements present in the stack - ${this.items.length}`);
+        console.log(` Element count- ${this.items.length}`);
         return this.items.length;
     }
 
@@ -86,9 +89,15 @@ stack.stackElementCount();
 stack.push("SpringMVC");
 stack.push("Jenkins");
 stack.push("JBoss");
-
-stack.pop();
-stack.pop();
+stack.stackElementCount();
 stack.pop();
 stack.stackElementCount();
-
+stack.pop();
+stack.stackElementCount();
+stack.pop();
+stack.stackElementCount();
+stack.pop();
+stack.stackElementCount();
+stack.push("JBoss");
+stack.stackElementCount();
+stack.pop();
