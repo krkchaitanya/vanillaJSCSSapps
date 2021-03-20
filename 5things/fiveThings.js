@@ -248,3 +248,24 @@ function createMachine(name, desc, throwErr) {
 createMachine("Dell", "Runs Linux OS", true)
 .then((machines) => showMachines())
 .catch(error => console.log(error));
+
+
+
+
+// This key word
+
+randomelem = "hello random window object element";
+
+function getThisVal() {
+    return this;
+}
+
+function getThisVal1() {
+    'use strict';
+    return this;
+}
+
+console.log(` Default tihs value refers to - ${getThisVal() === window}`);
+console.log(` Default tihs value refers to - ${window.randomelem}`);
+console.log(` Default tihs value refers to - ${getThisVal1() === undefined}`);
+
