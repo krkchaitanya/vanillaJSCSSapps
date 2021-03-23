@@ -78,3 +78,76 @@ console.log("--peek element--", stack.peek());
 console.log("--pop element--", stack.pop());
 console.log("--peek element--", stack.peek());
 console.log("--length of the stack--", stack.length());
+
+
+
+
+/*
+--------------------
+------- Sets -------
+--------------------
+*/
+
+var mydataset = function() {
+
+    var collection = [];
+
+    // is element exist in the collection
+    this.has = function(dataele) {
+        return collection.indexOf(dataele) !== -1;
+    }
+
+    // add element to the set
+    this.add = function(dataele) {
+
+        if (collection.indexOf(dataele) !== -1) {
+            console.log("Item already exists in the set");
+            return false;
+        } else {
+            collection.push(dataele);
+            return true;
+        }
+    }
+
+    //remove element from the set
+    this.remove = function(dataele) {
+
+        if (this.has(dataele)) {
+            dataeleIndex = collection.indexOf(dataele);
+            collection.splice(dataeleIndex,1);
+            return true;
+
+        } else {
+            console.log("Item is not present in the set");
+            return false;
+        }
+    }
+
+    // size of the set
+    this.size = function() {
+        return collection.length;
+    }
+
+}
+
+const dataset = new mydataset();
+
+console.log("--mydataset--", dataset.size());
+console.log("--mydataset--", dataset.add("itemone"));
+console.log("--mydataset--", dataset.has("itemthree"));
+console.log("--mydataset--", dataset.add("itemthree"));
+console.log("--mydataset--", dataset.size());
+console.log("--mydataset--", dataset.remove("itemthree"));
+console.log("--mydataset--", dataset.size());
+
+
+
+
+
+
+
+
+
+
+
+
